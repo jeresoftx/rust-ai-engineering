@@ -12,3 +12,6 @@ seguridad de producción.
 El seguimiento operativo vive en el
 [GitHub Project](https://github.com/users/jeresoftx/projects/25), agrupado por
 milestone. Cada entrega se traza como `issue -> rama -> commit -> PR -> merge`.
+
+El curso está completo como `draft`: requiere revisión humana editorial y no se
+declara publicado.

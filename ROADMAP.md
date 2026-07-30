@@ -8,3 +8,6 @@ que explica sus límites.
 El seguimiento operativo vive en el
 [GitHub Project](https://github.com/users/jeresoftx/projects/25), creado a
 partir del plan versionado y agrupado por milestone.
+
+Estado actual: contenido y crate completos como `draft`; el siguiente trabajo
+es revisión humana editorial, no publicación automática.

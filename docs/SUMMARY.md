@@ -6,3 +6,4 @@
 - [3. Herramientas, agentes y MCP](03-herramientas-agentes-y-mcp.md)
 - [4. Seguridad y límites de confianza](04-seguridad-y-limites-de-confianza.md)
 - [5. Evaluación y cierre](05-evaluacion-y-cierre.md)
+- [Glosario](GLOSARIO.md)
