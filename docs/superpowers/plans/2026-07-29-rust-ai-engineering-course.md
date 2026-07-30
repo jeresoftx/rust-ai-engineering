@@ -54,7 +54,8 @@ fecha de roadmap, dependencia, validación y criterio de cierre.
 - [x] #8 Implementar registro de herramientas limitado.
 - [x] #9 Implementar agente acotado y contrato MCP.
 - [x] #10 Escribir capítulo de herramientas, agentes y MCP.
-- [ ] #11-#12 Completar seguridad y límites de confianza.
+- [x] #11 Implementar clasificación de instrucciones no confiables.
+- [ ] #12 Escribir capítulo de límites de confianza.
 - [ ] #13-#15 Completar evaluación y cierre editorial.
 
 ## Criterio de cierre
