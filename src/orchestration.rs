@@ -76,3 +76,68 @@ impl ToolRegistry {
         Ok(())
     }
 }
+
+/// Registro local de acciones ya aceptadas por un agente.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct AgentRun {
+    budget: usize,
+    actions: Vec<ToolRequest>,
+}
+
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum AgentError {
+    EmptyBudget,
+    BudgetExhausted,
+}
+
+impl AgentRun {
+    pub fn new(budget: usize) -> Result<Self, AgentError> {
+        if budget == 0 {
+            return Err(AgentError::EmptyBudget);
+        }
+        Ok(Self {
+            budget,
+            actions: Vec::new(),
+        })
+    }
+
+    /// Registra una intención; ejecutar una herramienta sigue siendo otra decisión.
+    pub fn record(&mut self, request: ToolRequest) -> Result<(), AgentError> {
+        if self.actions.len() == self.budget {
+            return Err(AgentError::BudgetExhausted);
+        }
+        self.actions.push(request);
+        Ok(())
+    }
+}
+
+/// Un contrato MCP mínimo que hace visibles las capacidades ofrecidas.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct McpManifest {
+    pub server: String,
+    capabilities: BTreeSet<String>,
+}
+
+impl McpManifest {
+    pub fn new(
+        server: impl Into<String>,
+        capabilities: impl IntoIterator<Item = impl Into<String>>,
+    ) -> Result<Self, AgentError> {
+        let server = server.into();
+        let capabilities = capabilities
+            .into_iter()
+            .map(Into::into)
+            .collect::<BTreeSet<_>>();
+        if server.trim().is_empty() || capabilities.is_empty() {
+            return Err(AgentError::EmptyBudget);
+        }
+        Ok(Self {
+            server,
+            capabilities,
+        })
+    }
+
+    pub fn allows(&self, capability: &str) -> bool {
+        self.capabilities.contains(capability)
+    }
+}
