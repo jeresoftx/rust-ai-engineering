@@ -56,7 +56,8 @@ fecha de roadmap, dependencia, validación y criterio de cierre.
 - [x] #10 Escribir capítulo de herramientas, agentes y MCP.
 - [x] #11 Implementar clasificación de instrucciones no confiables.
 - [x] #12 Escribir capítulo de límites de confianza.
-- [ ] #13-#15 Completar evaluación y cierre editorial.
+- [x] #13 Implementar arnés de casos reproducibles.
+- [ ] #14-#15 Completar capítulo y cierre editorial.
 
 ## Criterio de cierre
 
