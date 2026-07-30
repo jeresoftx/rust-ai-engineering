@@ -40,6 +40,105 @@ pub struct RankedDocument {
     pub score: f32,
 }
 
+/// Un documento local con la representación que usa el índice.
+#[derive(Clone, Debug, PartialEq)]
+pub struct IndexedDocument {
+    pub id: String,
+    pub text: String,
+    embedding: Embedding,
+}
+
+impl IndexedDocument {
+    pub fn new(id: impl Into<String>, text: impl Into<String>, embedding: Embedding) -> Self {
+        Self {
+            id: id.into(),
+            text: text.into(),
+            embedding,
+        }
+    }
+}
+
+/// Un resultado recuperado con su texto y procedencia local.
+#[derive(Clone, Debug, PartialEq)]
+pub struct RetrievedDocument {
+    pub id: String,
+    pub text: String,
+    pub score: f32,
+}
+
+/// Errores de contrato del índice local.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum IndexError {
+    DimensionMismatch,
+    DuplicateId,
+    InvalidQuery,
+}
+
+/// Un índice didáctico en memoria, sin persistencia ni acceso a red.
+#[derive(Clone, Debug, Default)]
+pub struct InMemoryIndex {
+    dimension: usize,
+    documents: Vec<IndexedDocument>,
+}
+
+impl InMemoryIndex {
+    pub fn new(dimension: usize) -> Self {
+        Self {
+            dimension,
+            documents: Vec::new(),
+        }
+    }
+
+    /// Inserta un documento solo si respeta la dimensión y el identificador único.
+    pub fn insert(&mut self, document: IndexedDocument) -> Result<(), IndexError> {
+        if document.embedding.values.len() != self.dimension {
+            return Err(IndexError::DimensionMismatch);
+        }
+        if self
+            .documents
+            .iter()
+            .any(|current| current.id == document.id)
+        {
+            return Err(IndexError::DuplicateId);
+        }
+        self.documents.push(document);
+        Ok(())
+    }
+
+    /// Recupera hasta `limit` documentos ordenados y conserva su procedencia.
+    pub fn search(
+        &self,
+        query: &Embedding,
+        limit: usize,
+    ) -> Result<Vec<RetrievedDocument>, IndexError> {
+        if query.values.len() != self.dimension {
+            return Err(IndexError::DimensionMismatch);
+        }
+
+        let mut results = self
+            .documents
+            .iter()
+            .map(|document| {
+                cosine_similarity(query, &document.embedding)
+                    .map(|score| RetrievedDocument {
+                        id: document.id.clone(),
+                        text: document.text.clone(),
+                        score,
+                    })
+                    .map_err(|_| IndexError::InvalidQuery)
+            })
+            .collect::<Result<Vec<_>, _>>()?;
+        results.sort_by(|left, right| {
+            right
+                .score
+                .total_cmp(&left.score)
+                .then_with(|| left.id.cmp(&right.id))
+        });
+        results.truncate(limit);
+        Ok(results)
+    }
+}
+
 /// Calcula similitud coseno para dos vectores de igual dimensión.
 pub fn cosine_similarity(left: &Embedding, right: &Embedding) -> Result<f32, SimilarityError> {
     if left.values.len() != right.values.len() {
