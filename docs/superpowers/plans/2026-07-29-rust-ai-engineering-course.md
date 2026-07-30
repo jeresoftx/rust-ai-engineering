@@ -49,7 +49,8 @@ fecha de roadmap, dependencia, validación y criterio de cierre.
 - [x] #3 Implementar similitud y ranking determinista.
 - [x] #4 Implementar índice local y recuperación.
 - [x] #5 Escribir capítulo de recuperación.
-- [ ] #6-#7 Completar RAG y construcción de contexto.
+- [x] #6 Implementar ensamblado RAG con procedencia.
+- [ ] #7 Escribir capítulo de RAG y presupuesto.
 - [ ] #8-#10 Completar herramientas, agentes y MCP.
 - [ ] #11-#12 Completar seguridad y límites de confianza.
 - [ ] #13-#15 Completar evaluación y cierre editorial.
