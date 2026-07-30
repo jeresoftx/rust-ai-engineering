@@ -25,12 +25,12 @@ definitivas.
 
 ## Fases
 
-1. Fundación: alcance, evidencia, glosario inicial y contrato del crate.
-2. Recuperación: representaciones, similitud y un índice local.
-3. Contexto: RAG, presupuesto y procedencia de fragmentos.
-4. Orquestación: prompting, herramientas, agentes y contrato MCP mínimo.
-5. Seguridad: prompt injection, capacidades y límites de confianza.
-6. Evaluación: casos reproducibles, métricas, límites y cierre editorial.
+1. Fundación: alcance, evidencia, glosario inicial y contrato del crate. [x]
+2. Recuperación: representaciones, similitud y un índice local. [x]
+3. Contexto: RAG, presupuesto y procedencia de fragmentos. [x]
+4. Orquestación: prompting, herramientas, agentes y contrato MCP mínimo. [x]
+5. Seguridad: prompt injection, capacidades y límites de confianza. [x]
+6. Evaluación: casos reproducibles, métricas, límites y cierre editorial. [x]
 
 ## Ruta crítica
 
@@ -58,7 +58,7 @@ fecha de roadmap, dependencia, validación y criterio de cierre.
 - [x] #12 Escribir capítulo de límites de confianza.
 - [x] #13 Implementar arnés de casos reproducibles.
 - [x] #14 Escribir capítulo y límites de medición.
-- [ ] #15 Completar cierre editorial.
+- [x] #15 Completar cierre editorial.
 
 ## Criterio de cierre
 
