@@ -8,3 +8,7 @@ La fuente de verdad es el [plan versionado](docs/superpowers/plans/2026-07-29-ru
 El contenido inicia en `draft`. Los modelos del crate son locales,
 deterministas y didácticos; no sustituyen proveedores, modelos ni revisiones de
 seguridad de producción.
+
+El seguimiento operativo vive en el
+[GitHub Project](https://github.com/users/jeresoftx/projects/25), agrupado por
+milestone. Cada entrega se traza como `issue -> rama -> commit -> PR -> merge`.

@@ -37,6 +37,21 @@ definitivas.
 Fundación → recuperación → contexto → orquestación → seguridad → evaluación.
 Cada fase se divide en especificación, modelo probado y capítulo didáctico.
 
+## Seguimiento operativo
+
+El [GitHub Project #25](https://github.com/users/jeresoftx/projects/25) es la
+representación operativa del plan. Su vista principal se agrupa por milestone;
+cada issue está asignado a `jeresoftx`, tiene prioridad, duración estimada,
+fecha de roadmap, dependencia, validación y criterio de cierre.
+
+- [x] #1 Coordinar plan y trazabilidad.
+- [ ] #2 Documentar alcance, evidencia y límites.
+- [ ] #3-#5 Completar representaciones y recuperación.
+- [ ] #6-#7 Completar RAG y construcción de contexto.
+- [ ] #8-#10 Completar herramientas, agentes y MCP.
+- [ ] #11-#12 Completar seguridad y límites de confianza.
+- [ ] #13-#15 Completar evaluación y cierre editorial.
+
 ## Criterio de cierre
 
 El curso queda completo como `draft` cuando cada unidad incluya concepto,
