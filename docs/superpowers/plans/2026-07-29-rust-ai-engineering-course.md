@@ -48,7 +48,7 @@ fecha de roadmap, dependencia, validación y criterio de cierre.
 - [x] #2 Documentar alcance, evidencia y límites.
 - [x] #3 Implementar similitud y ranking determinista.
 - [x] #4 Implementar índice local y recuperación.
-- [ ] #5 Escribir capítulo de recuperación.
+- [x] #5 Escribir capítulo de recuperación.
 - [ ] #6-#7 Completar RAG y construcción de contexto.
 - [ ] #8-#10 Completar herramientas, agentes y MCP.
 - [ ] #11-#12 Completar seguridad y límites de confianza.
