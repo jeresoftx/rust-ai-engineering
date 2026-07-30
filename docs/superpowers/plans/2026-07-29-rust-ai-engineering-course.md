@@ -52,7 +52,8 @@ fecha de roadmap, dependencia, validación y criterio de cierre.
 - [x] #6 Implementar ensamblado RAG con procedencia.
 - [x] #7 Escribir capítulo de RAG y presupuesto.
 - [x] #8 Implementar registro de herramientas limitado.
-- [ ] #9-#10 Completar agente, MCP y capítulo.
+- [x] #9 Implementar agente acotado y contrato MCP.
+- [ ] #10 Escribir capítulo de herramientas, agentes y MCP.
 - [ ] #11-#12 Completar seguridad y límites de confianza.
 - [ ] #13-#15 Completar evaluación y cierre editorial.
 
