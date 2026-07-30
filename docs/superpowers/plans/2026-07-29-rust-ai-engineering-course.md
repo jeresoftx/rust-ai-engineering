@@ -51,7 +51,8 @@ fecha de roadmap, dependencia, validación y criterio de cierre.
 - [x] #5 Escribir capítulo de recuperación.
 - [x] #6 Implementar ensamblado RAG con procedencia.
 - [x] #7 Escribir capítulo de RAG y presupuesto.
-- [ ] #8-#10 Completar herramientas, agentes y MCP.
+- [x] #8 Implementar registro de herramientas limitado.
+- [ ] #9-#10 Completar agente, MCP y capítulo.
 - [ ] #11-#12 Completar seguridad y límites de confianza.
 - [ ] #13-#15 Completar evaluación y cierre editorial.
 
