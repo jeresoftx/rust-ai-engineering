@@ -45,7 +45,7 @@ cada issue está asignado a `jeresoftx`, tiene prioridad, duración estimada,
 fecha de roadmap, dependencia, validación y criterio de cierre.
 
 - [x] #1 Coordinar plan y trazabilidad.
-- [ ] #2 Documentar alcance, evidencia y límites.
+- [x] #2 Documentar alcance, evidencia y límites.
 - [ ] #3-#5 Completar representaciones y recuperación.
 - [ ] #6-#7 Completar RAG y construcción de contexto.
 - [ ] #8-#10 Completar herramientas, agentes y MCP.
